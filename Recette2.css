@@ -1,0 +1,296 @@
+*{overflow: auto;}  /* style generique a placer en haut du fichier */
+
+body{
+    background-color: #8ba1bb;
+    font-family: Arial;
+}
+
+p.cat{
+    background-color: black;
+    color: white;
+    display: inline-block;
+    margin-top: -15px;
+    padding: 8px 18px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* div contenu developer avec les valeur pour taille ecran ordinateur  */
+div.contenu{
+    background-color:white;
+    margin: 60px 10% 80px 10%;/* adapte au ordinateur "width" de moins 768px */
+    padding: 0px 30px 30px 30px; /* haut, droite, bas, gauche */
+    box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
+    overflow: visible; /*permet de rendre visible le debordement du mot Recette*/
+    min-width: 390px;   /*le contenu doit s'adapter a tout termineau donc on ne peux pas imposer un min-width car il sera pas adapter au iphone par exemple donc le min-width est palcé dans "@media only screen" */
+    max-width: 600px;
+}
+    
+h1{
+    text-align: center;
+    margin-bottom: 11px;
+    margin-top: 12px;
+
+}
+p.centre{
+    text-align: center;
+    max-width: 400px; /* taille max de lu block ou la div */
+    display:inline-block;  /* permet au block ou au div de s'afficher sur la meme ligne */
+    font-size: 16px;
+    /*background-color:burlywood*/
+}
+
+.centre{
+    text-align: center;
+    width: 100%;
+}
+.centre-img{
+    text-align: center;
+    width: 100%;
+    max-height: 400px;
+    display: block;
+    object-fit: cover;
+    min-height: 200px; /* si l'image est pas chargé le mi-height peut definir une taille de hauteur*/
+    background-color: beige; /* avec en fond de couleurbeige */
+}
+
+div.cat{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    overflow: visible; /*permet de rendre visible le debordement du mot Recette*/
+}
+
+div.separateur{
+    background-color: black;
+    width: 100px;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.info{
+    position: relative;
+
+    }
+    
+table.info{
+    bottom:0; 
+    width: 100%; 
+    color: white; 
+    background-color:#6C829DC0;
+    height: 80px;
+    position: absolute;
+}
+
+table.info td{
+    text-align: center;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+table.info th{
+    font-size: 16px;
+    vertical-align: bottom;
+    padding: 5px;
+}
+
+div.info th{
+    font-size: 16px;
+    vertical-align: bottom;
+    padding: 5px;
+}
+
+div.colonne{
+    width: 45%; /* taille max de la div */
+    margin-top: 20px;
+   
+}
+
+div.colonne h2{
+    text-align: center;
+    text-transform: uppercase; /* Met le text en majuscule directement */
+    font-size: 15px; /* taille du text */
+    border-bottom: 5px solid #6C829D; /* ligne sous le text "epaisseur", "solid" , couleur */
+}
+
+div.colonne1{
+    /* background-color:burlywood;*/
+    display: inline-block;
+    margin-right: 10%;
+}
+
+div.colonne2{
+    float: right; /* permet de decaler l'objet a droite  - supporte pas "display: inline-block"*/
+   
+}
+
+
+div.ingredient p{
+    border: 1px solid #6C829D;
+    padding: 8px 0; /* padding 8px horizontale et 0 verticale */
+    font-size: 14px;
+    margin-top: 4px;
+    margin-bottom: 0;
+
+}
+
+table.preparation p.numero{
+    background-color: #6C829D;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align:center;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 4px;
+    box-sizing: border-box; /*conserve la taille du block*/
+    border-radius: 50%; /*permet d'arrondir les angle d'un block*/
+    margin-top: 0%;
+}
+
+table.preparation td{
+    vertical-align: top; /*vertical-align permet d'aligner le text au plus haut du block*/
+}
+
+
+table.preparation td.preparation-etape{
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+
+}
+table.preparation td{
+    height: 40px; /*dans une table le min et max ne sont pas pris en compte. 
+    Mais lheight et withd sont pris en compte et signifi pour une table la valeur minimal a ne pas depassé*/
+}
+
+    /*Style pour terminau portable, tablette ect*/
+      /*si l'ecran a une taille Max de 768px alors on est PAS sur ordinateur.*/
+
+@media only screen and (max-width:768px){
+    div.contenu {
+        margin: 40px 8% 40px 8%; /* adapte au portable et ipad ect..avec un "width" de moins 768px */
+        padding: 0px 8px 20px 8px; /* haut, droite, bas, gauche */
+        max-width:100%;   /*le contenu doit s'adapter a tout termineau donc il prendra 100% de la taille ecran du termineau car il sera adapter au iphone par exemple */
+    }  
+    
+    table.info{
+        height: 50px;
+    }
+    
+    table.info td{
+        font-size: 12px;
+    }
+    
+    table.info th{
+        font-size: 14px;
+    }
+
+    div.colonne{
+        width: 100%; /* taille max de la div */
+       
+    }
+    div.colonne1{
+        /* background-color:burlywood;*/
+        display: inline-block;
+    }
+
+    div.colonne2{
+        float:none      
+    }
+
+}
+
+/*cas ou la taille de l'ecran est tres grand a partir de 900px et au-dela*/
+ /* adapte automatiquement a la taille de l'ecran */
+@media only screen and (min-width:900px){ 
+    div.contenu {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0px 8px 20px 8px; /* haut, droite, bas, gauche */
+        max-width:655px;   /*le contenu doit s'adapter a tout termineau donc il prendra 100% de la taille ecran du termineau car il sera adapter au iphone par exemple */
+    
+    }
+} 
+
+
+
+
+
+/*
+<!---------------------------------------------------------CSS-->      
+<!-- <style> </style> balise css le code est apliqué au body les couleur
+        * police ecriture "font-family"
+        * id et class sont appliqué au balise exemple p,   ul, ect..exemple dans css 
+            AVEC les class possibilité de combiné avec des virgule
+                p#cat {
+                    background-color: black;
+                    color: white;
+
+                ul#cat {
+                    background-color: black;
+                    color: white;
+
+            exemple avec class
+            p.cat {
+                    background-color: black;
+                    color: white;
+
+            l'application de l'id ou class sans element precis s'applique a tous les élément avec id ou class exemple
+
+            #cat {
+                    background-color: black;
+                    color: white;
+            .cat {
+                    background-color: black;
+                    color: white;
+AVEC les class possibilité de combiné avec des virgule
+            p.cat,h1, h2, p.h2 {
+
+       * margin : haut(px) droit(px) bas(px) gauche(px)
+        la marge peut être exprimé en %
+
+        * possibilité d'appliqué directement du css si il y a uniquemnt 1 seul élément comme "h1"
+
+        * le pading permet de diminué ou augmenter la taille du contenu interne
+
+        * width permet d'appliquer une taille de longueure a une phrase apar exemple
+        exemple max-width et min-width taille maximum et taille minimum exemple image , phrase ou autre
+
+        * Utilisation du div pour definir le bloque sur lequel appliqer les paramètre CSS
+
+        * display
+            - block -occupe toute la ligne afficher jusqu'au bout de la fenêtre, 
+                display block les block ne peuvet pas s'afficher sur la meme ligne. Il s'affiche en les un en dessous des autre (sur une nouvelle ligne) "block" supporte le "width" et "height" 
+                (exemple element de type block "<div></div>")
+
+            - inline -occupe l'espace necessaire a utiliser on peut ajouter les autre element de type "inline" sur la même ligne (exemple element de type inline text "<big></big>)
+                "Ilnine element" ne supporte pas le "width" et "height" 
+
+            - inline-block -occupe l'espace necessaire a utiliser on peut ajouter les autre element de type "block" sur la même ligne et permet aussi d'avoir du controle sur "width" et "height" 
+
+
+        * font weight: bold text en gars
+        * font sieze
+        * width: 100px largeur
+        * height: 1px epaiseur 
+        * style="position: relative; positionne un block par rapport a sa position initiale sans deranger les position des autre contenu
+        Permet aussi au element enfant d'être position a l'intèrieure du même block
+        * Oppacité d'une couleur on peux utiliser 80 ou C0 a la fin exemple #6C829DC0;
+        *  "table.info td" element a lintérieure de table info
+
+        !!! attention les saut de ligne "<br>" peuvent engendré des decallage dans les div
+        
+        * Object fit: propriété CSS object-fit définit la façon dont le contenu d'un élément  doit s'adapter à son conteneur en utilisant sa largeur et sa hauteur.
+        *box-sizing : border-box permet de conservé la taille block (width et heeight) quelque soit les dimension des element a l'intèrieure du block
+        * vertical-align permet d'aligner les ligne au plus haut du block
+
+
+        *   overflow: auto; /*va géré pour l'ensemble du code tout element qui deborde du contenu
+                code *{overflow: auto;}
+
+
+ <!---------------------------------------------------------CSS--> 
+*/
+
